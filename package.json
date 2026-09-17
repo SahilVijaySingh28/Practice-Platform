@@ -1,0 +1,18 @@
+{
+  "name": "lld-practice-platform",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm --prefix client run build",
+    "dev": "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "start": "npm --prefix server run start",
+    "test": "npm --prefix server run test && npm --prefix client run test"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
