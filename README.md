@@ -83,3 +83,50 @@ The persistence seam is intentionally isolated behind the functions in [server/s
 - The prototype uses an in-memory store only.
 - The parser is heuristic-based and meant for demo usage, not production parsing of arbitrary design documents.
 - The app is intentionally simple and monolithic for the 2-day scope.
+
+## AI Usage Notes
+
+Use this section to record meaningful AI-assisted decisions made during development.
+
+### Decision 1
+#### What was suggested
+
+#### What I accepted/rejected
+
+#### Why
+
+---
+
+### Decision 2
+#### What was suggested
+
+#### What I accepted/rejected
+
+#### Why
+
+---
+
+### Decision 3
+#### What was suggested
+
+#### What I accepted/rejected
+
+#### Why
+
+---
+
+### Decision 4
+#### What was suggested
+
+#### What I accepted/rejected
+
+#### Why
+
+---
+
+### Decision 5
+#### What was suggested
+
+#### What I accepted/rejected
+
+#### Why
