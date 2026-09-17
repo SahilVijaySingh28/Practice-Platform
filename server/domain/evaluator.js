@@ -222,6 +222,15 @@ export async function runCompositeEvaluation(submissionId, options = {}) {
     feedback: submission.feedback
   });
 
+  if (!process.env.ANTHROPIC_API_KEY) {
+    submission.status = 'EVALUATED';
+    updateSubmissionHandler(submission.id, {
+      status: submission.status,
+      feedback: submission.feedback
+    });
+    return submission;
+  }
+
   try {
     const llmFeedback = await llmEvaluate(graph, rubric, deterministic);
     const merged = mergeDimensions(deterministic, llmFeedback.dimensions || []);

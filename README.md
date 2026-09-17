@@ -34,7 +34,7 @@ npm --prefix client install
 
 ## Set environment variable
 
-The backend calls Anthropic using the `ANTHROPIC_API_KEY` environment variable.
+The app works without a paid API key by using deterministic feedback. Add `ANTHROPIC_API_KEY` only if you want optional Claude-based feedback.
 
 ```bash
 export ANTHROPIC_API_KEY=your_api_key_here
@@ -63,7 +63,7 @@ The project includes a Vercel configuration that builds the React client and run
 1. Push this repository to GitHub.
 2. Import the GitHub repository into Vercel.
 3. Keep the project root set to the repository root.
-4. Add `ANTHROPIC_API_KEY` in Vercel Project Settings → Environment Variables if LLM evaluation is required.
+4. Add `ANTHROPIC_API_KEY` in Vercel Project Settings → Environment Variables only if optional Claude feedback is required.
 5. Deploy with the default production settings.
 
 The Vercel deployment serves the app at the generated Vercel URL. The data store is in-memory, so data resets when the serverless instance is replaced.
