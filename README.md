@@ -86,47 +86,62 @@ The persistence seam is intentionally isolated behind the functions in [server/s
 
 ## AI Usage Notes
 
-Use this section to record meaningful AI-assisted decisions made during development.
+These notes summarize the meaningful AI-assisted decisions used during development.
 
 ### Decision 1
 #### What was suggested
+Keep persistence behind a small store module so the prototype can use memory now and a database later.
 
 #### What I accepted/rejected
+Accepted.
 
 #### Why
+This keeps the API and domain logic independent from the storage implementation.
 
 ---
 
 ### Decision 2
 #### What was suggested
+Separate parsing, deterministic evaluation, and HTTP routing into different modules.
 
 #### What I accepted/rejected
+Accepted.
 
 #### Why
+The separation made the evaluator easier to test and allowed feedback logic to evolve without changing the API routes.
 
 ---
 
 ### Decision 3
 #### What was suggested
+Use deterministic checks as the baseline and make Claude feedback optional.
 
 #### What I accepted/rejected
+Accepted.
 
 #### Why
+Learners can use the deployed app without paying for an API key, while Claude can still provide deeper feedback when configured.
 
 ---
 
 ### Decision 4
 #### What was suggested
+Use a focused React interface with problem selection, submission, feedback, and attempt history in one workflow.
 
 #### What I accepted/rejected
+Accepted.
 
 #### Why
+The practice loop is the core product requirement, so the UI should keep those steps visible and easy to repeat.
 
 ---
 
 ### Decision 5
 #### What was suggested
+Deploy the React client and Express API together through Vercel serverless functions.
 
 #### What I accepted/rejected
+Accepted with changes.
 
 #### Why
+This keeps deployment simple for the prototype. Vercel routing required a catch-all API function so nested API paths reach Express correctly.
